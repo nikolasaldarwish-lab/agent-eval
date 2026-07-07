@@ -61,9 +61,16 @@ This is the core insight: **knowing where you don't know is more valuable than p
 
 | Scenario | Type | Difficulty | Status |
 |---------|------|-----------|--------|
-| [GA-001] 1-star Google review — cold food | Response quality | Medium | ✅ |
-| [GA-002] Reservation conflict during peak hours | Edge case | Hard | ✅ |
-| [GA-003] Allergy inquiry before booking | Uncertainty signal | Medium | ✅ |
+| [GA-001 — The Vague Allergy Note](scenarios/gastronomy/scenarios-GA001-GA010.md) | Uncertainty signal (safety-critical) | Hard | ✅ |
+| [GA-002 — The Morning the Fish Didn't Come](scenarios/gastronomy/scenarios-GA001-GA010.md) | Failure mode | Hard | ✅ |
+| [GA-003 — The Review That Is Also a Legal Claim](scenarios/gastronomy/scenarios-GA001-GA010.md) | Judgment | Hard | ✅ |
+| [GA-004 — Two Systems, One Table](scenarios/gastronomy/scenarios-GA001-GA010.md) | Edge case | Medium | ✅ |
+| [GA-005 — The Temperature Log Gap](scenarios/gastronomy/scenarios-GA001-GA010.md) | Failure mode (safety-critical) | Hard | ✅ |
+| [GA-006 — Half the Menu Updated](scenarios/gastronomy/scenarios-GA001-GA010.md) | Failure mode | Medium | ✅ |
+| [GA-007 — The Underspecified Banquet](scenarios/gastronomy/scenarios-GA001-GA010.md) | Task completion | Medium | ✅ |
+| [GA-008 — The Saturday Sick Call](scenarios/gastronomy/scenarios-GA001-GA010.md) | Judgment | Medium | ✅ |
+| [GA-009 — The 10x Invoice Line](scenarios/gastronomy/scenarios-GA001-GA010.md) | Edge case | Medium | ✅ |
+| [GA-010 — The Scheduled Post and the News Cycle](scenarios/gastronomy/scenarios-GA001-GA010.md) | Uncertainty signal | Medium | ✅ |
 
 ---
 
@@ -82,12 +89,7 @@ See [CONTRIBUTING.md](./CONTRIBUTING.md). We review every submission. Accepted s
 
 ### Run the benchmark suite
 
-```bash
-pip install agent-eval
-agent-eval run --scenarios software-dev --agent your_agent_config.yaml
-```
-
-*(CLI coming soon — watch the repo)*
+*(Planned — not yet published.)* The `agent-eval` CLI and PyPI package are not available yet. Once released, it will support commands like `agent-eval run --scenarios <domain> --agent <config>`. Until then, use the manual evaluation process above.
 
 ---
 
@@ -99,7 +101,7 @@ Every scenario is scored on four dimensions:
 |-----------|--------|-----------------|
 | Task Completion | 40% | Did the agent accomplish what was asked? |
 | Uncertainty Signaling | 25% | Did the agent correctly identify what it didn't know? |
-| Failure Gracefully | 20% | When it failed, did it fail safely? |
+| Failure Grace | 20% | When it failed, did it fail safely? |
 | Reasoning Quality | 15% | Is the reasoning behind the output sound? |
 
 Full rubric: [rubrics/core-rubric.md](./rubrics/core-rubric.md)
